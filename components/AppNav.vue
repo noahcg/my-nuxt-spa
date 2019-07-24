@@ -23,7 +23,7 @@ export default {};
 
 header {
   align-items: center;
-  border-bottom: 5px solid #eee;
+  border-bottom: 1px solid #eee;
   display: flex;
   flex-direction: row;
   float: right;
