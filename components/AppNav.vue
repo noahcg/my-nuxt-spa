@@ -1,10 +1,10 @@
 <template>
   <header>
-    <section></section>
+    <p>Noah Glushien</p>
     <nav>
       <ul>
         <li>
-          <nuxt-link exact to="/">Main</nuxt-link>
+          <nuxt-link exact to="/">About</nuxt-link>
         </li>
         <li>
           <nuxt-link exact to="/projects">Projects</nuxt-link>
@@ -22,29 +22,42 @@ export default {};
 @import "~assets/variables";
 
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  section {
-    grid-area: 1 / 1 / 2 / 13;
+  align-items: center;
+  border-bottom: 5px solid #eee;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  justify-content: space-between;
+  width: 100%;
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.75em;
+    font-weight: 100;
   }
+
   nav {
     align-items: center;
     display: flex;
-    grid-area: 1 / 8 / 2 / 13;
     height: 100px;
-    justify-content: center;
+    justify-content: flex-end;
+    width: 50%;
 
     ul {
       padding-left: 0;
 
       li {
         display: inline-block;
+        font-weight: 300;
         margin-right: 10px;
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    width: 50%;
   }
 }
 </style>

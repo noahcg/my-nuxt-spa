@@ -2,8 +2,11 @@
   <main>
     <section class="background">Image Goes Here</section>
     <section class="content">
-      <h1>Hello</h1>
-      <p>Information about me will go here</p>
+      <h1>About me</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea non odit amet adipisci inventore quam officiis, voluptatem esse quis repudiandae consequuntur obcaecati voluptas rem suscipit neque, ex, ratione ab!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea non odit amet adipisci inventore quam officiis, voluptatem esse quis repudiandae consequuntur obcaecati voluptas rem suscipit neque, ex, ratione ab!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea non odit amet adipisci inventore quam officiis, voluptatem esse quis repudiandae consequuntur obcaecati voluptas rem suscipit neque, ex, ratione ab!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea non odit amet adipisci inventore quam officiis, voluptatem esse quis repudiandae consequuntur obcaecati voluptas rem suscipit neque, ex, ratione ab!</p>
     </section>
   </main>
 </template>
@@ -13,25 +16,20 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/variables";
+@import "~assets/mixins";
 main {
+  clear: right;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
 
-  .background {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-  .content {
-    grid-area: 1 / 2 / 2 / 3;
-  }
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
 }
 h1 {
-  font-family: $page-title-font;
-  font-size: $page-title-size;
-  font-weight: $page-title-weight;
-  line-height: $page-title-lh;
+  @include page-title;
 }
 </style>
