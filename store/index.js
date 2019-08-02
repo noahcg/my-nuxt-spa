@@ -17,7 +17,14 @@ export const actions = {
         `https://api.github.com/users/noahcg/repos?page=1&per_page=100`
       ).then(res => res.json());
 
-      console.log(githubProjects);
+      githubProjects = githubProjects
+        .filter(el => el.fork === false)
+        .map(({ id, name, description, html_url }) => ({
+          id,
+          name,
+          description,
+          html_url
+        }));
       commit("updateGithubProjects", githubProjects);
     } catch (err) {
       console.log(err);
