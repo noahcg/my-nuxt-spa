@@ -23,7 +23,12 @@
       <h2>Personal Github Repos</h2>
       <p>These are my personal projects</p>
       <ul>
-        <li>
+        <li v-for="project in githubProjects" :key="project.id">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <a :href="project.html_url">Link to repo</a>
+        </li>
+        <!-- <li>
           <h3>Project Title</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ea quos suscipit culpa magni eos deserunt vero numquam dolorem harum dicta cumque similique, quasi sequi doloremque ducimus. Doloremque, iusto doloribus!</p>
           <a href>Link to project</a>
@@ -37,14 +42,23 @@
           <h3>Project Title</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ea quos suscipit culpa magni eos deserunt vero numquam dolorem harum dicta cumque similique, quasi sequi doloremque ducimus. Doloremque, iusto doloribus!</p>
           <a href>Link to project</a>
-        </li>
+        </li>-->
       </ul>
     </section>
   </section>
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+
+export default {
+  computed: {
+    ...mapState(["githubProjects"])
+  },
+  mounted() {
+    this.$store.dispatch("getGithubProjects");
+  }
+};
 </script>
 
 <style lang="scss" scoped>
