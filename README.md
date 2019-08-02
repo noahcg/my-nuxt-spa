@@ -1,10 +1,14 @@
-# my-nuxt-spa
+# NoahGlushien.com 2019
 
-> My personal website built with Nuxt
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+</a>
+
+This is the most recent iteration of my personal site. It was built using Vue/Nuxt and hosted on Netlify.
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm run install
 
