@@ -28,21 +28,6 @@
           <p>{{ project.description }}</p>
           <a :href="project.html_url">Link to repo</a>
         </li>
-        <!-- <li>
-          <h3>Project Title</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ea quos suscipit culpa magni eos deserunt vero numquam dolorem harum dicta cumque similique, quasi sequi doloremque ducimus. Doloremque, iusto doloribus!</p>
-          <a href>Link to project</a>
-        </li>
-        <li>
-          <h3>Project Title</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ea quos suscipit culpa magni eos deserunt vero numquam dolorem harum dicta cumque similique, quasi sequi doloremque ducimus. Doloremque, iusto doloribus!</p>
-          <a href>Link to project</a>
-        </li>
-        <li>
-          <h3>Project Title</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ea quos suscipit culpa magni eos deserunt vero numquam dolorem harum dicta cumque similique, quasi sequi doloremque ducimus. Doloremque, iusto doloribus!</p>
-          <a href>Link to project</a>
-        </li>-->
       </ul>
     </section>
   </section>
