@@ -1,30 +1,21 @@
 <template>
-  <div class="container">
+  <article>
     <app-nav />
     <main>
-      <section class="personal-meta">
-        <img src="~assets/img/photo.png" alt="Noah Glushien" />
-        <p>Front End Developer + Accessibility Advocate</p>
-        <ul>
-          <li>
-            <font-awesome-icon :icon="['fab', 'github']" />
-          </li>
-          <li>
-            <font-awesome-icon :icon="['fab', 'twitter']" />
-          </li>
-        </ul>
-      </section>
       <nuxt />
     </main>
-  </div>
+    <app-footer />
+  </article>
 </template>
 
 <script>
 import AppNav from "~/components/AppNav.vue";
+import AppFooter from "~/components/AppFooter.vue";
 
 export default {
   components: {
-    AppNav
+    AppNav,
+    AppFooter
   }
 };
 </script>
@@ -34,11 +25,11 @@ export default {
 @import "~assets/variables";
 html {
   box-sizing: border-box;
-  background: #111;
   color: #eee;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  height: 100%;
   line-height: 24px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -54,19 +45,54 @@ a:active {
 }
 
 body {
+  background: #3d4e5d url("~assets/img/background@2x.png") no-repeat 0 0;
+  background-attachment: fixed;
+  background-position: 20% 0;
+  background-size: cover;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  padding: 0 10px;
+article {
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 15px;
+  position: relative;
+
+  &:before {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+    content: "";
+    display: block;
+    left: 0;
+    height: 60px;
+    position: absolute;
+    top: -60px;
+    width: 100%;
+  }
 }
 
 main {
-  clear: right;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
+  flex-grow: 1;
+  position: relative;
+}
+
+header,
+main,
+footer {
+  flex-shrink: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  float: right;
+  width: 50%;
+  height: 100vh;
 }
 
 .personal-meta img {
@@ -100,9 +126,31 @@ main {
   }
 }
 
+@media (min-width: 576px) {
+  body {
+    background-position: 0 0;
+  }
+}
+
 @media (min-width: 768px) {
+  body {
+    background-size: contain;
+  }
   .container {
     padding: 0 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  article {
+    background: none;
+    float: right;
+    padding: 0 15px;
+    width: 50%;
+  }
+  main {
+    // background: linear-gradient(#000 10%, blue 90%);
+    // padding: 0 15px;
   }
 }
 </style>

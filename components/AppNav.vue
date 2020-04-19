@@ -1,13 +1,16 @@
 <template>
   <header>
-    <p>Noah Glushien</p>
+    <p>
+      Noah Glushien <br />
+      <span>Front End Developer / Accessibility Advocate</span>
+    </p>
     <nav>
       <ul>
         <li>
-          <nuxt-link exact to="/">About</nuxt-link>
+          <nuxt-link exact to="/">Projects</nuxt-link>
         </li>
         <li>
-          <nuxt-link exact to="/projects">Projects</nuxt-link>
+          <nuxt-link exact to="/about">About</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -24,24 +27,26 @@ export default {};
 header {
   align-items: center;
   border-bottom: 1px solid #eee;
-  display: flex;
-  flex-direction: row;
-  float: right;
-  justify-content: space-between;
-  width: 100%;
+
+  margin-top: 30px;
+  position: relative;
+  top: 0;
 
   p {
     font-family: "Roboto", sans-serif;
     font-size: 1.75em;
     font-weight: 100;
+    margin: 0.5em 0 0;
+
+    span {
+      font-size: 0.9rem;
+    }
   }
 
   nav {
     align-items: center;
     display: flex;
-    height: 100px;
-    justify-content: flex-end;
-    width: 50%;
+    width: 100%;
 
     ul {
       padding-left: 0;
@@ -57,7 +62,22 @@ header {
 
 @media (min-width: 768px) {
   header {
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    nav {
+      height: 100px;
+      justify-content: flex-end;
+      width: 50%;
+    }
   }
+}
+@media (min-width: 992px) {
+  // header {
+  //   nav {
+
+  //   }
+  // }
 }
 </style>
