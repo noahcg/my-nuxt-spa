@@ -16,8 +16,11 @@
             atrocities and, as a result, greater opportunities to take
             preventive action.
           </p>
-          <a href="https://earlywarningproject.ushmm.org/" target="_blank"
-            >Link to project</a
+          <a
+            class="default-link"
+            href="https://earlywarningproject.ushmm.org/"
+            target="_blank"
+            >Project Link</a
           >
         </li>
         <li>
@@ -27,9 +30,10 @@
             that shaped Americans’ responses to Nazism, war, and genocide.
           </p>
           <a
+            class="default-link"
             href="https://exhibitions.ushmm.org/americans-and-the-holocaust/main"
             target="_blank"
-            >Link to project</a
+            >Project Link</a
           >
         </li>
       </ul>
@@ -41,7 +45,7 @@
         <li v-for="project in githubProjects" :key="project.id">
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
-          <a :href="project.html_url">Link to repo</a>
+          <a class="default-link" :href="project.html_url">Repo Link</a>
         </li>
       </ul>
     </section>
