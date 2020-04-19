@@ -41,17 +41,43 @@ a:visited,
 a:active {
   color: $link-color;
   font-family: $link-font;
+  position: relative;
   text-decoration: none;
+
+  &.default-link {
+    box-shadow: inset 0 -0.475em 0 darken(rgba(61, 77, 93, 0.5), 40%);
+    padding: 2px 5px;
+    transition: all 200ms 50ms ease;
+
+    &:hover,
+    &:focus {
+      background-color: darken(rgba(61, 77, 93, 0.5), 40%);
+      box-shadow: inset 0 -0.475em 0 transparent;
+    }
+  }
 }
 
 body {
-  background: #3d4e5d url("~assets/img/background@2x.png") no-repeat 0 0;
-  background-attachment: fixed;
-  background-position: 20% 0;
-  background-size: cover;
   height: 100%;
   margin: 0;
   padding: 0;
+
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: #3d4e5d url("~assets/img/background@2x.png") no-repeat 0 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: 20% 0;
+    background-size: cover;
+  }
 }
 
 article {
@@ -127,21 +153,21 @@ footer {
 }
 
 @media (min-width: 576px) {
-  body {
+  body:before {
     background-position: 0 0;
   }
 }
 
 @media (min-width: 768px) {
-  body {
-    background-size: contain;
-  }
   .container {
     padding: 0 50px;
   }
 }
 
 @media (min-width: 992px) {
+  body:before {
+    background-size: contain;
+  }
   article {
     background: none;
     float: right;
